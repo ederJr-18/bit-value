@@ -1,0 +1,448 @@
+<!doctype html>
+<html class="dark" lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Blog - BitValue Coin</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300..900;1,300..900&family=Outfit:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              bg_deep: "#050B14",
+              card_bg: "#0F1621",
+              primary: "#00D4FF",
+              accent_purple: "#9D00FF",
+              accent_yellow: "#FFC300",
+            },
+            fontFamily: {
+              display: ["Crimson Pro", "serif"],
+              sans: ["Outfit", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style type="text/tailwindcss">
+      /* Navegación Glassmorphism */
+      .glass-nav {
+        background-color: rgba(5, 11, 20, 0.85);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      .btn-primary {
+        background-color: #00d4ff;
+        color: #050b14;
+        border: none;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+        box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+      }
+
+      .btn-ghost {
+        background-color: transparent;
+        color: #ffffff;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .btn-ghost:hover {
+        border-color: #ffffff;
+        background-color: rgba(255, 255, 255, 0.05);
+      }
+
+      .text-gradient-owl {
+        background: linear-gradient(90deg, #00d4ff 0%, #9d00ff 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      /* Clase extra para las imágenes de los artículos */
+      .article-img-hover:hover img {
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-bg_deep font-sans text-gray-200 transition-colors duration-300"
+  >
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-nav">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          <div class="flex-shrink-0 flex items-center gap-3">
+            <div
+              class="h-14 w-14 rounded-full bg-card_bg border border-primary/30 flex items-center justify-center overflow-hidden"
+            >
+              <img
+                src="./bit value.PNG"
+                alt="Logo BitValue"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <span
+              class="font-display text-xl font-bold tracking-widest text-white uppercase"
+            >
+              Bit<span class="text-primary">Value</span>
+            </span>
+          </div>
+
+          <div class="hidden md:flex items-center space-x-10">
+            <a
+              class="text-sm font-medium text-gray-300 hover:text-primary transition-colors"
+              href="home.html"
+              >Inicio</a
+            >
+            <a
+              class="text-sm font-medium text-gray-300 hover:text-primary transition-colors"
+              href="home.html#nosotros"
+              >Nosotros</a
+            >
+            <a
+              class="text-sm font-medium text-gray-300 hover:text-primary transition-colors"
+              href="home.html#servicios"
+              >Servicios</a
+            >
+            <a
+              class="text-sm font-bold text-primary border-b border-primary pb-1"
+              href="#"
+              >Blog</a
+            >
+          </div>
+
+          <div class="flex items-center gap-4">
+            <button
+              class="btn-primary px-6 py-2.5 rounded-full font-bold text-sm flex items-center gap-2"
+            >
+              <span class="material-symbols-outlined text-lg"
+                >account_balance_wallet</span
+              >
+              Contactanos
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <header class="pt-32 pb-12 px-4 relative overflow-hidden">
+      <div
+        class="absolute top-0 right-0 w-1/3 h-full bg-primary/5 blur-[100px] rounded-full pointer-events-none"
+      ></div>
+
+      <div class="max-w-7xl mx-auto text-center relative z-10">
+        <span
+          class="text-accent_purple font-bold tracking-widest text-sm uppercase mb-2 block"
+          >Actualidad & Tecnología</span
+        >
+        <h1 class="font-display text-4xl md:text-6xl text-white mb-6">
+          Novedades del <span class="text-gradient-owl">Ecosistema</span>
+        </h1>
+        <p class="text-gray-400 max-w-2xl mx-auto text-lg">
+          Mantente al día con las últimas tendencias en Blockchain, seguridad de
+          datos y actualizaciones de BitValue.
+        </p>
+
+        <div class="mt-8 flex justify-center">
+          <div class="relative w-full max-w-md">
+            <input
+              type="text"
+              placeholder="Buscar artículo..."
+              class="w-full bg-card_bg border border-white/10 rounded-full py-3 pl-12 pr-4 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder-gray-500"
+            />
+            <span
+              class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
+              >search</span
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="pb-24 px-4">
+      <div class="max-w-7xl mx-auto">
+        <section class="mb-16">
+          <div
+            class="bg-card_bg rounded-2xl overflow-hidden border border-white/10 hover:border-primary/50 transition-all duration-300 group grid md:grid-cols-2"
+          >
+            <div class="h-64 md:h-auto overflow-hidden relative">
+              <div
+                class="w-full h-full bg-gray-800 flex items-center justify-center text-gray-600 group-hover:scale-105 transition-transform duration-500"
+              >
+                <span class="material-symbols-outlined text-6xl">hub</span>
+              </div>
+              <div
+                class="absolute top-4 left-4 bg-primary text-bg_deep text-xs font-bold px-3 py-1 rounded-full uppercase"
+              >
+                Destacado
+              </div>
+            </div>
+            <div class="p-8 md:p-12 flex flex-col justify-center">
+              <div class="flex items-center gap-3 text-sm text-gray-400 mb-4">
+                <span class="text-primary font-medium">Blockchain</span>
+                <span>•</span>
+                <span>Hace 2 días</span>
+              </div>
+              <h2
+                class="font-display text-3xl text-white mb-4 leading-tight group-hover:text-primary transition-colors"
+              >
+                El futuro de la propiedad de datos en la Web 3.0
+              </h2>
+              <p class="text-gray-400 mb-6 line-clamp-3">
+                Descubre cómo la descentralización está devolviendo el poder a
+                los usuarios, permitiendo monetizar la información que generan
+                sus vehículos y dispositivos IoT sin intermediarios.
+              </p>
+              <a
+                href="#"
+                class="inline-flex items-center text-white font-bold hover:text-primary transition-colors group-hover:gap-2"
+              >
+                Leer artículo completo
+                <span class="material-symbols-outlined text-lg ml-1"
+                  >arrow_forward</span
+                >
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <div class="flex flex-wrap gap-4 mb-10 justify-center md:justify-start">
+          <button
+            class="px-4 py-1.5 rounded-full border border-primary text-primary bg-primary/10 text-sm font-medium"
+          >
+            Todos
+          </button>
+          <button
+            class="px-4 py-1.5 rounded-full border border-white/10 text-gray-400 hover:border-white/30 hover:text-white transition-all text-sm font-medium"
+          >
+            Cripto
+          </button>
+          <button
+            class="px-4 py-1.5 rounded-full border border-white/10 text-gray-400 hover:border-white/30 hover:text-white transition-all text-sm font-medium"
+          >
+            Seguridad
+          </button>
+          <button
+            class="px-4 py-1.5 rounded-full border border-white/10 text-gray-400 hover:border-white/30 hover:text-white transition-all text-sm font-medium"
+          >
+            Tutoriales
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <article
+            class="bg-card_bg rounded-xl overflow-hidden border border-white/5 hover:border-primary/50 hover:-translate-y-2 transition-all duration-300 shadow-lg hover:shadow-primary/10 group h-full flex flex-col"
+          >
+            <div class="h-48 bg-gray-800 overflow-hidden relative">
+              <div
+                class="w-full h-full bg-[#1A2332] flex items-center justify-center"
+              >
+                <span class="material-symbols-outlined text-4xl text-gray-600"
+                  >token</span
+                >
+              </div>
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <div class="flex justify-between items-center mb-3">
+                <span
+                  class="text-xs font-bold text-accent_purple uppercase tracking-wider"
+                  >Economía</span
+                >
+                <span class="text-xs text-gray-500">20 Oct, 2026</span>
+              </div>
+              <h3
+                class="font-display text-xl text-white mb-3 group-hover:text-primary transition-colors"
+              >
+                Tokenización de activos físicos
+              </h3>
+              <p class="text-sm text-gray-400 mb-4 line-clamp-3 flex-grow">
+                Guía completa sobre cómo transformar bienes reales en activos
+                digitales seguros utilizando nuestra plataforma.
+              </p>
+              <a
+                href="#"
+                class="text-sm font-bold text-white mt-auto flex items-center gap-1 group-hover:text-primary transition-colors"
+              >
+                Leer más
+                <span class="material-symbols-outlined text-base"
+                  >arrow_forward</span
+                >
+              </a>
+            </div>
+          </article>
+
+          <article
+            class="bg-card_bg rounded-xl overflow-hidden border border-white/5 hover:border-primary/50 hover:-translate-y-2 transition-all duration-300 shadow-lg hover:shadow-primary/10 group h-full flex flex-col"
+          >
+            <div class="h-48 bg-gray-800 overflow-hidden relative">
+              <div
+                class="w-full h-full bg-[#1A2332] flex items-center justify-center"
+              >
+                <span class="material-symbols-outlined text-4xl text-gray-600"
+                  >security</span
+                >
+              </div>
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <div class="flex justify-between items-center mb-3">
+                <span
+                  class="text-xs font-bold text-primary uppercase tracking-wider"
+                  >Seguridad</span
+                >
+                <span class="text-xs text-gray-500">18 Oct, 2026</span>
+              </div>
+              <h3
+                class="font-display text-xl text-white mb-3 group-hover:text-primary transition-colors"
+              >
+                Protegiendo tu Wallet
+              </h3>
+              <p class="text-sm text-gray-400 mb-4 line-clamp-3 flex-grow">
+                5 consejos esenciales de ciberseguridad para mantener tus
+                BitValue Coins a salvo de ataques externos.
+              </p>
+              <a
+                href="#"
+                class="text-sm font-bold text-white mt-auto flex items-center gap-1 group-hover:text-primary transition-colors"
+              >
+                Leer más
+                <span class="material-symbols-outlined text-base"
+                  >arrow_forward</span
+                >
+              </a>
+            </div>
+          </article>
+
+          <article
+            class="bg-card_bg rounded-xl overflow-hidden border border-white/5 hover:border-primary/50 hover:-translate-y-2 transition-all duration-300 shadow-lg hover:shadow-primary/10 group h-full flex flex-col"
+          >
+            <div class="h-48 bg-gray-800 overflow-hidden relative">
+              <div
+                class="w-full h-full bg-[#1A2332] flex items-center justify-center"
+              >
+                <span class="material-symbols-outlined text-4xl text-gray-600"
+                  >directions_car</span
+                >
+              </div>
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <div class="flex justify-between items-center mb-3">
+                <span
+                  class="text-xs font-bold text-accent_yellow uppercase tracking-wider"
+                  >IoT</span
+                >
+                <span class="text-xs text-gray-500">15 Oct, 2026</span>
+              </div>
+              <h3
+                class="font-display text-xl text-white mb-3 group-hover:text-primary transition-colors"
+              >
+                OBD II y Smart Contracts
+              </h3>
+              <p class="text-sm text-gray-400 mb-4 line-clamp-3 flex-grow">
+                Cómo el diagnóstico de tu vehículo puede ejecutar contratos
+                inteligentes para seguros y mantenimiento automotriz.
+              </p>
+              <a
+                href="#"
+                class="text-sm font-bold text-white mt-auto flex items-center gap-1 group-hover:text-primary transition-colors"
+              >
+                Leer más
+                <span class="material-symbols-outlined text-base"
+                  >arrow_forward</span
+                >
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <div class="mt-16 flex justify-center gap-2">
+          <button
+            class="h-10 w-10 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:border-primary hover:text-primary transition-colors"
+          >
+            <span class="material-symbols-outlined text-sm"
+              >arrow_back_ios</span
+            >
+          </button>
+          <button
+            class="h-10 w-10 rounded-full bg-primary text-bg_deep font-bold flex items-center justify-center"
+          >
+            1
+          </button>
+          <button
+            class="h-10 w-10 rounded-full border border-white/10 text-gray-400 hover:border-white/30 hover:text-white transition-colors flex items-center justify-center"
+          >
+            2
+          </button>
+          <button
+            class="h-10 w-10 rounded-full border border-white/10 text-gray-400 hover:border-white/30 hover:text-white transition-colors flex items-center justify-center"
+          >
+            3
+          </button>
+          <button
+            class="h-10 w-10 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:border-primary hover:text-primary transition-colors"
+          >
+            <span class="material-symbols-outlined text-sm"
+              >arrow_forward_ios</span
+            >
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-bg_deep border-t border-white/10 py-12 px-4">
+      <div
+        class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8"
+      >
+        <div class="flex items-center gap-3">
+          <div
+            class="h-8 w-8 rounded bg-primary flex items-center justify-center text-bg_deep font-bold"
+          >
+            BV
+          </div>
+          <span class="font-display font-bold text-lg text-white"
+            >BitValue Coin</span
+          >
+        </div>
+        <div class="flex gap-6">
+          <a class="text-gray-500 hover:text-primary transition-colors" href="#"
+            ><i class="material-symbols-outlined">photo_camera</i></a
+          >
+          <a
+            class="text-gray-500 hover:text-accent_purple transition-colors"
+            href="#"
+            ><i class="material-symbols-outlined">public</i></a
+          >
+          <a class="text-gray-500 hover:text-white transition-colors" href="#"
+            ><i class="material-symbols-outlined">close</i></a
+          >
+        </div>
+      </div>
+      <div
+        class="max-w-7xl mx-auto mt-8 pt-8 border-t border-white/5 text-center text-sm text-gray-600"
+      >
+        © 2026 BitValue Coin. Todos los derechos reservados.
+      </div>
+    </footer>
+  </body>
+</html>
