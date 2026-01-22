@@ -17,7 +17,7 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/styles.css" />
     <script src="../modelo.js" defer></script>
 
     <script>
@@ -101,11 +101,7 @@
               class="h-16 w-16 rounded-full bg-card_bg border border-primary/30 flex items-center justify-center overflow-hidden"
             >
               <img
-<<<<<<< HEAD:Client/home.html
-                src="./image/bit value.PNG"
-=======
                 src="../images/bit value.PNG"
->>>>>>> origin/main:Client/views/home.html
                 alt="Logo BitValue"
                 class="w-full h-full object-cover"
               />
@@ -157,8 +153,6 @@
 
     <main class="pt-20" id="inicio">
       <section class="py-24 px-4 bg-bg_deep relative overflow-hidden">
-        
-
         <div
           class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(157,0,255,0.1)_0%,transparent_60%)]"
         ></div>
@@ -362,46 +356,72 @@
     <!-- MODAL DE CONTACTO -->
     <div class="modal-container" id="modal_container">
       <div class="modal text-center">
-        <div class="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
+        <div
+          class="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary"
+        >
           <span class="material-symbols-outlined text-4xl">mail</span>
         </div>
 
-        
-          <h2 class="font-display text-3xl font-bold text-center">¡Escríbenos!</h2>
-          <p class="text-gray-400 text-center mb-6">Cuéntanos cómo podemos ayudarte.</p>
-            <!-- FORMULARIO -->
-            <form id="contact-form" class="flex flex-col gap-4">
-              <!-- Campo Nombre -->
-              <div class="flex flex-col gap-1 text-left">
-                <label class="text-sm font-medium text-gray-300">Nombre completo</label>
-                <input type="text" placeholder="Ej: Juan Pérez" required
-                      class="bg-card_bg border border-white/10 rounded-lg px-4 py-2 focus:border-primary outline-none transition-all">
-              </div>
+        <h2 class="font-display text-3xl font-bold text-center">
+          ¡Escríbenos!
+        </h2>
+        <p class="text-gray-400 text-center mb-6">
+          Cuéntanos cómo podemos ayudarte.
+        </p>
+        <!-- FORMULARIO -->
+        <form id="contact-form" class="flex flex-col gap-4">
+          <!-- Campo Nombre -->
+          <div class="flex flex-col gap-1 text-left">
+            <label class="text-sm font-medium text-gray-300"
+              >Nombre completo</label
+            >
+            <input
+              type="text"
+              placeholder="Ej: Juan Pérez"
+              required
+              class="bg-card_bg border border-white/10 rounded-lg px-4 py-2 focus:border-primary outline-none transition-all"
+            />
+          </div>
 
-              <!-- Campo Email -->
-              <div class="flex flex-col gap-1 text-left">
-                <label class="text-sm font-medium text-gray-300">Correo electrónico</label>
-                <input type="email" placeholder="tu@correo.com" required
-                      class="bg-card_bg border border-white/10 rounded-lg px-4 py-2 focus:border-primary outline-none transition-all">
-              </div>
+          <!-- Campo Email -->
+          <div class="flex flex-col gap-1 text-left">
+            <label class="text-sm font-medium text-gray-300"
+              >Correo electrónico</label
+            >
+            <input
+              type="email"
+              placeholder="tu@correo.com"
+              required
+              class="bg-card_bg border border-white/10 rounded-lg px-4 py-2 focus:border-primary outline-none transition-all"
+            />
+          </div>
 
-              <!-- Campo Mensaje -->
-              <div class="flex flex-col gap-1 text-left">
-                <label class="text-sm font-medium text-gray-300">Mensaje</label>
-                <textarea rows="4" placeholder="¿En qué podemos ayudarte?" required
-                          class="bg-card_bg border border-white/10 rounded-lg px-4 py-2 focus:border-primary outline-none transition-all resize-none"></textarea>
-              </div>
+          <!-- Campo Mensaje -->
+          <div class="flex flex-col gap-1 text-left">
+            <label class="text-sm font-medium text-gray-300">Mensaje</label>
+            <textarea
+              rows="4"
+              placeholder="¿En qué podemos ayudarte?"
+              required
+              class="bg-card_bg border border-white/10 rounded-lg px-4 py-2 focus:border-primary outline-none transition-all resize-none"
+            ></textarea>
+          </div>
 
-              <!-- Botón de Envío -->
-              <button type="submit" class="btn-primary w-full py-3 rounded-full font-bold mt-4">
-                Enviar Mensaje
-              </button>
-            </form>
+          <!-- Botón de Envío -->
+          <button
+            type="submit"
+            class="btn-primary w-full py-3 rounded-full font-bold mt-4"
+          >
+            Enviar Mensaje
+          </button>
+        </form>
 
-            <button id="close" class="mt-4 text-gray-500 hover:text-white text-sm transition-colors">
-              Cerrar ventana
-            </button>
-          
+        <button
+          id="close"
+          class="mt-4 text-gray-500 hover:text-white text-sm transition-colors"
+        >
+          Cerrar ventana
+        </button>
       </div>
     </div>
   </body>
