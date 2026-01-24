@@ -16,7 +16,8 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
       rel="stylesheet"
     />
-
+  <script src="../modelo.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
     <script>
       tailwind.config = {
         darkMode: "class",
@@ -95,7 +96,7 @@
         <div class="flex items-center justify-between h-20">
           <div class="flex-shrink-0 flex items-center gap-3">
             <div
-              class="h-14 w-14 rounded-full bg-card_bg border border-primary/30 flex items-center justify-center overflow-hidden"
+              class="h-16 w-16 rounded-full bg-card_bg border border-primary/30 flex items-center justify-center overflow-hidden"
             >
               <img
                 src="../images/bit value.PNG"
@@ -118,31 +119,102 @@
             >
             <a
               class="text-sm font-medium text-gray-300 hover:text-primary transition-colors"
-              href="home.html#nosotros"
+              href="#nosotros"
               >Nosotros</a
             >
             <a
               class="text-sm font-medium text-gray-300 hover:text-primary transition-colors"
-              href="home.html#servicios"
+              href="#servicios"
               >Servicios</a
             >
             <a
-              class="text-sm font-bold text-primary border-b border-primary pb-1"
-              href="#"
+              class="text-sm font-medium text-gray-300 hover:text-primary transition-colors"
+              href="blog.html"
               >Blog</a
             >
           </div>
 
           <div class="flex items-center gap-4">
             <button
-              class="btn-primary px-6 py-2.5 rounded-full font-bold text-sm flex items-center gap-2"
+  command="show-modal"
+  commandfor="contact-dialog"
+  class="btn-primary px-6 py-2.5 rounded-full font-bold text-sm flex items-center gap-2"
+>
+  <span class="material-symbols-outlined text-lg">
+    account_balance_wallet
+  </span>
+  Contáctanos
+</button>
+
+          </div>
+
+
+
+            <!-- Menú Hamburguesa (Solo Móvil) -->
+            <button
+              id="mobile-menu-open"
+              class="md:hidden text-white hover:text-primary transition-colors focus:outline-none"
             >
-              <span class="material-symbols-outlined text-lg"
-                >account_balance_wallet</span
-              >
-              Contactanos
+              <span class="material-symbols-outlined text-3xl">menu</span>
             </button>
           </div>
+        </div>
+      </div>
+
+      <!-- Menú Móvil (Estilo jw.org - Tema Oscuro) -->
+      <div
+        id="mobile-menu"
+        class="fixed inset-x-0 top-0 z-[60] bg-card_bg text-gray-200 shadow-2xl -translate-y-full transition-transform duration-500 ease-in-out md:hidden flex flex-col h-auto max-h-[90vh] overflow-y-auto border-b border-primary/20"
+      >
+        <!-- Enlaces de Navegación -->
+        <nav class="flex flex-col w-full divide-y divide-white/5">
+          <a
+            class="flex items-center gap-4 px-6 py-5 hover:bg-white/5 transition-colors group border-t border-white/5"
+            href="home.html"
+          >
+            <span class="material-symbols-outlined text-gray-500 group-hover:text-primary transition-colors">home</span>
+            <span class="text-sm font-bold tracking-wider uppercase">Inicio</span>
+          </a>
+          <a
+            class="flex items-center gap-4 px-6 py-5 hover:bg-white/5 transition-colors group"
+            href="#nosotros"
+          >
+            <span class="material-symbols-outlined text-gray-500 group-hover:text-primary transition-colors">groups</span>
+            <span class="text-sm font-bold tracking-wider uppercase">Nosotros</span>
+          </a>
+          <a
+            class="flex items-center gap-4 px-6 py-5 hover:bg-white/5 transition-colors group"
+            href="#servicios"
+          >
+            <span class="material-symbols-outlined text-gray-500 group-hover:text-primary transition-colors">grid_view</span>
+            <span class="text-sm font-bold tracking-wider uppercase">Servicios</span>
+          </a>
+          <a
+            class="flex items-center gap-4 px-6 py-5 hover:bg-white/5 transition-colors group"
+            href="blog.html"
+          >
+            <span class="material-symbols-outlined text-gray-500 group-hover:text-primary transition-colors">news</span>
+            <span class="text-sm font-bold tracking-wider uppercase">Blog</span>
+          </a>
+          <a
+            id="mobile-contact-trigger"
+            class="flex items-center gap-4 px-6 py-5 hover:bg-white/5 transition-colors group"
+            href="#"
+          >
+            <span class="material-symbols-outlined text-gray-500 group-hover:text-primary transition-colors">mail</span>
+            <span class="text-sm font-bold tracking-wider uppercase">Contáctanos</span>
+          </a>
+        </nav>
+
+        <!-- Botón de Cierre Bottom Right -->
+        <div class="p-4 flex justify-end bg-white/5">
+          <button
+            id="mobile-menu-close"
+            class="flex items-center gap-2 px-4 py-2 text-gray-400 hover:text-white transition-colors font-bold text-xs uppercase"
+          >
+            <span class="material-symbols-outlined text-xl">close</span>
+            Cerrar
+          </button>
         </div>
       </div>
     </nav>
@@ -444,5 +516,105 @@
         © 2026 BitValue Coin. Todos los derechos reservados.
       </div>
     </footer>
+     <el-dialog>
+      <dialog
+        id="contact-dialog"
+        aria-labelledby="contact-dialog-title"
+        class="fixed inset-0 size-auto max-h-none max-w-none overflow-y-auto bg-transparent backdrop:bg-transparent"
+      >
+        <!-- Backdrop -->
+        <el-dialog-backdrop
+          class="fixed inset-0 bg-bg_deep/70 transition-opacity data-closed:opacity-0 data-enter:duration-300 data-leave:duration-200"
+        ></el-dialog-backdrop>
+
+        <!-- Wrapper -->
+        <div
+          tabindex="0"
+          class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0 focus:outline-none"
+        >
+          <!-- Panel -->
+          <el-dialog-panel
+            class="relative w-full transform overflow-hidden rounded-2xl bg-card_bg text-left shadow-xl outline outline-1 outline-white/10 transition-all data-closed:translate-y-6 data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in sm:my-8 sm:max-w-md data-closed:sm:translate-y-0 data-closed:sm:scale-95"
+          >
+            <!-- Header -->
+            <div class="px-6 pt-6 pb-4 text-center">
+              <div class="flex justify-end">
+                <button
+                  type="button"
+                  command="close"
+                  commandfor="contact-dialog"
+                  class="text-gray-500 hover:text-white transition-colors flex justify-end"
+                >
+                  <i class="material-symbols-outlined">close</i>
+                </button>
+              </div>
+
+              <div
+                class="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 text-primary"
+              >
+                <span class="material-symbols-outlined text-3xl">mail</span>
+              </div>
+
+              <h2
+                id="contact-dialog-title"
+                class="font-display text-2xl font-bold text-white"
+              >
+                ¡Escríbenos!
+              </h2>
+
+              <p class="mt-2 text-sm text-gray-400">
+                Cuéntanos cómo podemos ayudarte.
+              </p>
+            </div>
+
+            <!-- Form -->
+            <form class="px-6 pb-6 space-y-4">
+              <div>
+                <label class="block text-sm font-medium text-gray-300">
+                  Nombre completo
+                </label>
+                <input
+                  type="text"
+                  required
+                  placeholder="Ej: Juan Pérez"
+                  class="mt-1 w-full rounded-lg bg-bg_deep border border-white/10 px-4 py-2 focus:border-primary focus:ring-0 outline-none transition"
+                />
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-gray-300">
+                  Correo electrónico
+                </label>
+                <input
+                  type="email"
+                  required
+                  placeholder="tu@correo.com"
+                  class="mt-1 w-full rounded-lg bg-bg_deep border border-white/10 px-4 py-2 focus:border-primary focus:ring-0 outline-none transition"
+                />
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-gray-300">
+                  Mensaje
+                </label>
+                <textarea
+                  rows="4"
+                  required
+                  placeholder="¿En qué podemos ayudarte?"
+                  class="mt-1 w-full resize-none rounded-lg bg-bg_deep border border-white/10 px-4 py-2 focus:border-primary focus:ring-0 outline-none transition"
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                class="btn-primary w-full py-3 rounded-full font-bold mt-2"
+              >
+                Enviar mensaje
+              </button>
+            </form>
+          </el-dialog-panel>
+        </div>
+      </dialog>
+    </el-dialog>
   </body>
 </html>
