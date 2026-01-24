@@ -92,6 +92,7 @@
   <body
     class="bg-bg_deep font-sans text-gray-200 transition-colors duration-300"
   >
+  <header>
     <nav class="fixed top-0 left-0 right-0 z-50 glass-nav">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-20">
@@ -151,18 +152,77 @@
 
 
 
+            <!-- Menú Hamburguesa (Solo Móvil) -->
+            <button
+              id="mobile-menu-open"
+              class="md:hidden text-white hover:text-primary transition-colors focus:outline-none"
+            >
+              <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
           </div>
         </div>
       </div>
-    </nav>
 
+      <!-- Menú Móvil (Estilo jw.org - Tema Oscuro) -->
+      <div
+        id="mobile-menu"
+        class="fixed inset-x-0 top-0 z-[60] bg-card_bg text-gray-200 shadow-2xl -translate-y-full transition-transform duration-500 ease-in-out md:hidden flex flex-col h-auto max-h-[90vh] overflow-y-auto border-b border-primary/20"
+      >
+        <!-- Enlaces de Navegación -->
+        <nav class="flex flex-col w-full divide-y divide-white/5">
+          <a
+            class="flex items-center gap-4 px-6 py-5 hover:bg-white/5 transition-colors group border-t border-white/5"
+            href="home.html"
+          >
+            <span class="material-symbols-outlined text-gray-500 group-hover:text-primary transition-colors">home</span>
+            <span class="text-sm font-bold tracking-wider uppercase">Inicio</span>
+          </a>
+          <a
+            class="flex items-center gap-4 px-6 py-5 hover:bg-white/5 transition-colors group"
+            href="nosotros.html"
+          >
+            <span class="material-symbols-outlined text-gray-500 group-hover:text-primary transition-colors">groups</span>
+            <span class="text-sm font-bold tracking-wider uppercase">Nosotros</span>
+          </a>
+          <a
+            class="flex items-center gap-4 px-6 py-5 hover:bg-white/5 transition-colors group"
+            href="#servicios"
+          >
+            <span class="material-symbols-outlined text-gray-500 group-hover:text-primary transition-colors">grid_view</span>
+            <span class="text-sm font-bold tracking-wider uppercase">Servicios</span>
+          </a>
+          <a
+            class="flex items-center gap-4 px-6 py-5 hover:bg-white/5 transition-colors group"
+            href="#blog"
+          >
+            <span class="material-symbols-outlined text-gray-500 group-hover:text-primary transition-colors">news</span>
+            <span class="text-sm font-bold tracking-wider uppercase">Blog</span>
+          </a>
+          <a
+            id="mobile-contact-trigger"
+            class="flex items-center gap-4 px-6 py-5 hover:bg-white/5 transition-colors group"
+            href="#"
+          >
+            <span class="material-symbols-outlined text-gray-500 group-hover:text-primary transition-colors">mail</span>
+            <span class="text-sm font-bold tracking-wider uppercase">Contáctanos</span>
+          </a>
+        </nav>
+
+        <!-- Botón de Cierre Bottom Right -->
+        <div class="p-4 flex justify-end bg-white/5">
+          <button
+            id="mobile-menu-close"
+            class="flex items-center gap-2 px-4 py-2 text-gray-400 hover:text-white transition-colors font-bold text-xs uppercase"
+          >
+            <span class="material-symbols-outlined text-xl">close</span>
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
     <main class="pt-20" id="inicio">
       <section class="py-24 px-4 bg-bg_deep relative overflow-hidden">
-
-
-
-        
-
 
         <div
           class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(157,0,255,0.1)_0%,transparent_60%)]"
