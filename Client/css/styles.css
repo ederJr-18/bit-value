@@ -42,6 +42,17 @@ button{
     pointer-events: auto;
 }
 
+/* MENÚ MÓVIL ESTILO JW */
+#mobile-menu {
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+#mobile-menu:not(.-translate-y-full) {
+    transform: translateY(0);
+}
+
 .modal{
     background-color: #0F1621;
     color: white;
