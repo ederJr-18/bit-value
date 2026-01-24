@@ -17,7 +17,9 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../css/styles.css">
-    <script src="../modelo.js" defer></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
+
 
     <script>
       tailwind.config = {
@@ -135,14 +137,16 @@
 
           <div class="flex items-center gap-4">
             <button
-              id="open"
-              class="btn-primary px-6 py-2.5 rounded-full font-bold text-sm flex items-center gap-2"
-            >
-              <span class="material-symbols-outlined text-lg"
-                >account_balance_wallet</span
-              >
-              Contactanos
-            </button>
+  command="show-modal"
+  commandfor="contact-dialog"
+  class="btn-primary px-6 py-2.5 rounded-full font-bold text-sm flex items-center gap-2"
+>
+  <span class="material-symbols-outlined text-lg">
+    account_balance_wallet
+  </span>
+  Contáctanos
+</button>
+
           </div>
 
 
@@ -360,48 +364,122 @@
     </footer>
 
     <!-- MODAL DE CONTACTO -->
-    <div class="modal-container" id="modal_container">
-      <div class="modal text-center">
-        <div class="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
-          <span class="material-symbols-outlined text-4xl">mail</span>
+    <el-dialog>
+  <dialog
+    id="contact-dialog"
+    aria-labelledby="contact-dialog-title"
+    class="fixed inset-0 size-auto max-h-none max-w-none overflow-y-auto bg-transparent backdrop:bg-transparent"
+  >
+  
+    <!-- Backdrop -->
+    <el-dialog-backdrop
+      class="fixed inset-0 bg-bg_deep/70 transition-opacity
+             data-closed:opacity-0
+             data-enter:duration-300
+             data-leave:duration-200"
+    ></el-dialog-backdrop>
+
+    <!-- Wrapper -->
+    <div
+      tabindex="0"
+      class="flex min-h-full items-end justify-center p-4 text-center
+             sm:items-center sm:p-0 focus:outline-none"
+    >
+    
+      <!-- Panel -->
+      <el-dialog-panel
+        class="relative w-full transform overflow-hidden rounded-2xl
+               bg-card_bg text-left shadow-xl outline outline-1 outline-white/10
+               transition-all
+               data-closed:translate-y-6 data-closed:opacity-0
+               data-enter:duration-300 data-enter:ease-out
+               data-leave:duration-200 data-leave:ease-in
+               sm:my-8 sm:max-w-md
+               data-closed:sm:translate-y-0 data-closed:sm:scale-95"
+      >
+
+        <!-- Header -->
+        <div class="px-6 pt-6 pb-4 text-center">
+          
+            <div class="flex justify-end"><button
+            type="button"
+            command="close"
+            commandfor="contact-dialog"
+            class="text-gray-500 hover:text-white transition-colors flex justify-end"
+          >
+            <i class="material-symbols-outlined">close</i>
+          </button></div>
+
+          
+          <div class="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 text-primary">
+            <span class="material-symbols-outlined text-3xl">mail</span>
+          </div>
+
+          <h2
+            id="contact-dialog-title"
+            class="font-display text-2xl font-bold text-white"
+          >
+            ¡Escríbenos!
+          </h2>
+
+          <p class="mt-2 text-sm text-gray-400">
+            Cuéntanos cómo podemos ayudarte.
+          </p>
         </div>
-        
-        <h2 class="font-display text-3xl font-bold text-center">¡Escríbenos!</h2>
-        <p class="text-gray-400 text-center mb-6">Cuéntanos cómo podemos ayudarte.</p>
-        
-        <!-- FORMULARIO -->
-        <form id="contact-form" class="flex flex-col gap-4">
-          <!-- Campo Nombre -->
-          <div class="flex flex-col gap-1 text-left">
-            <label class="text-sm font-medium text-gray-300">Nombre completo</label>
-            <input type="text" placeholder="Ej: Juan Pérez" required
-                  class="bg-card_bg border border-white/10 rounded-lg px-4 py-2 focus:border-primary outline-none transition-all">
+
+        <!-- Form -->
+        <form class="px-6 pb-6 space-y-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-300">
+              Nombre completo
+            </label>
+            <input
+              type="text"
+              required
+              placeholder="Ej: Juan Pérez"
+              class="mt-1 w-full rounded-lg bg-bg_deep border border-white/10 px-4 py-2
+                     focus:border-primary focus:ring-0 outline-none transition"
+            />
           </div>
 
-          <!-- Campo Email -->
-          <div class="flex flex-col gap-1 text-left">
-            <label class="text-sm font-medium text-gray-300">Correo electrónico</label>
-            <input type="email" placeholder="tu@correo.com" required
-                  class="bg-card_bg border border-white/10 rounded-lg px-4 py-2 focus:border-primary outline-none transition-all">
+          <div>
+            <label class="block text-sm font-medium text-gray-300">
+              Correo electrónico
+            </label>
+            <input
+              type="email"
+              required
+              placeholder="tu@correo.com"
+              class="mt-1 w-full rounded-lg bg-bg_deep border border-white/10 px-4 py-2
+                     focus:border-primary focus:ring-0 outline-none transition"
+            />
           </div>
 
-          <!-- Campo Mensaje -->
-          <div class="flex flex-col gap-1 text-left">
-            <label class="text-sm font-medium text-gray-300">Mensaje</label>
-            <textarea rows="4" placeholder="¿En qué podemos ayudarte?" required
-                      class="bg-card_bg border border-white/10 rounded-lg px-4 py-2 focus:border-primary outline-none transition-all resize-none"></textarea>
+          <div>
+            <label class="block text-sm font-medium text-gray-300">
+              Mensaje
+            </label>
+            <textarea
+              rows="4"
+              required
+              placeholder="¿En qué podemos ayudarte?"
+              class="mt-1 w-full resize-none rounded-lg bg-bg_deep border border-white/10 px-4 py-2
+                     focus:border-primary focus:ring-0 outline-none transition"
+            ></textarea>
           </div>
 
-          <!-- Botón de Envío -->
-          <button type="submit" class="btn-primary w-full py-3 rounded-full font-bold mt-4">
-            Enviar Mensaje
+          <button
+            type="submit"
+            class="btn-primary w-full py-3 rounded-full font-bold mt-2"
+          >
+            Enviar mensaje
           </button>
         </form>
 
-        <button id="close" class="mt-4 text-gray-500 hover:text-white text-sm transition-colors">
-          Cerrar ventana
-        </button>
-      </div>
+      </el-dialog-panel>
     </div>
+  </dialog>
+</el-dialog>
+
   </body>
 </html>
