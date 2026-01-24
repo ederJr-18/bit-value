@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html class="dark" lang="es">
   <head>
     <meta charset="utf-8" />
@@ -16,9 +16,16 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/styles.css" />
     <script src="../modelo.js" defer></script>
-
+    <!-- COMPONENTS -->
+    <script src="../components/MainHeader.js" defer></script>
+    <script src="../components/MainFooter.js"></script>
+    <script src="../components/ContactModal.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1"
+      type="module"
+    ></script>
     <script>
       tailwind.config = {
         darkMode: "class",
@@ -37,8 +44,8 @@
               sans: ["Outfit", "sans-serif"],
             },
           },
-          }
-        };
+        },
+      };
     </script>
 
     <style type="text/tailwindcss">
@@ -55,7 +62,9 @@
         background-color: #00d4ff; /* Color del logo */
         color: #050b14; /* Texto oscuro para contraste perfecto */
         border: none;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
         box-shadow: 0 0 20px rgba(0, 212, 255, 0.3); /* Resplandor suave fijo */
       }
 
@@ -90,76 +99,11 @@
   <body
     class="bg-bg_deep font-sans text-gray-200 transition-colors duration-300"
   >
-    <nav class="fixed top-0 left-0 right-0 z-50 glass-nav">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-20">
-          <div class="flex-shrink-0 flex items-center gap-3">
-            <div
-              class="h-16 w-16 rounded-full bg-card_bg border border-primary/30 flex items-center justify-center overflow-hidden"
-            >
-              <img
-                src="../images/bit value.PNG"
-                alt="Logo BitValue"
-                class="w-full h-full object-cover"
-              />
-            </div>
-            <span
-              class="font-display text-xl font-bold tracking-widest text-white uppercase"
-            >
-              Bit<span class="text-primary">Value</span>
-            </span>
-          </div>
-
-          <div class="hidden md:flex items-center space-x-10">
-            <a
-              class="text-sm font-medium text-gray-300 hover:text-primary transition-colors"
-              href="home.html"
-              >Inicio</a
-            >
-            <a
-              class="text-sm font-medium text-gray-300 hover:text-primary transition-colors"
-              href="#nosotros"
-              >Nosotros</a
-            >
-            <a
-              class="text-sm font-medium text-gray-300 hover:text-primary transition-colors"
-              href="#servicios"
-              >Servicios</a
-            >
-            <a
-              class="text-sm font-medium text-gray-300 hover:text-primary transition-colors"
-              href="#blog"
-              >Blog</a
-            >
-          </div>
-
-          <div class="flex items-center gap-4">
-            <button
-              id="open"
-              class="btn-primary px-6 py-2.5 rounded-full font-bold text-sm flex items-center gap-2"
-            >
-              <span class="material-symbols-outlined text-lg"
-                >account_balance_wallet</span
-              >
-              Contactanos
-            </button>
-          </div>
-
-
-
-          </div>
-        </div>
-      </div>
-    </nav>
-
+    <header>
+      <main-header></main-header>
+    </header>
     <main class="pt-20" id="inicio">
       <section class="py-24 px-4 bg-bg_deep relative overflow-hidden">
-
-
-
-        
-
-
         <div
           class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(157,0,255,0.1)_0%,transparent_60%)]"
         ></div>
@@ -168,7 +112,8 @@
           <h1
             class="font-display text-5xl md:text-7xl mb-6 leading-tight text-white"
           >
-            ¿¿Quienes somos <span class="text-gradient-owl">Nosotros ??</span> <br />
+            ¿¿Quienes somos <span class="text-gradient-owl">Nosotros ??</span>
+            <br />
           </h1>
           <p class="text-lg text-gray-400 mb-10 max-w-2xl mx-auto">
             Explora nuestro ecosistema diseñado para empoderarte en la nueva
@@ -325,83 +270,12 @@
     </main>
 
     <footer class="bg-bg_deep border-t border-white/10 py-12 px-4">
-      <div
-        class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8"
-      >
-        <div class="flex items-center gap-3">
-          <div
-            class="h-8 w-8 rounded bg-primary flex items-center justify-center text-bg_deep font-bold"
-          >
-            BV
-          </div>
-          <span class="font-display font-bold text-lg text-white"
-            >BitValue Coin</span
-          >
-        </div>
-        <div class="flex gap-6">
-          <a class="text-gray-500 hover:text-primary transition-colors" href="#"
-            ><i class="material-symbols-outlined">photo_camera</i></a
-          >
-          <a
-            class="text-gray-500 hover:text-accent_purple transition-colors"
-            href="#"
-            ><i class="material-symbols-outlined">public</i></a
-          >
-          <a class="text-gray-500 hover:text-white transition-colors" href="#"
-            ><i class="material-symbols-outlined">close</i></a
-          >
-        </div>
-      </div>
-      <div
-        class="max-w-7xl mx-auto mt-8 pt-8 border-t border-white/5 text-center text-sm text-gray-600"
-      >
-        © 2026 BitValue Coin. Todos los derechos reservados.
-      </div>
+      <main-footer></main-footer>
     </footer>
 
     <!-- MODAL DE CONTACTO -->
-    <div class="modal-container" id="modal_container">
-      <div class="modal text-center">
-        <div class="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
-          <span class="material-symbols-outlined text-4xl">mail</span>
-        </div>
-        
-        <h2 class="font-display text-3xl font-bold text-center">¡Escríbenos!</h2>
-        <p class="text-gray-400 text-center mb-6">Cuéntanos cómo podemos ayudarte.</p>
-        
-        <!-- FORMULARIO -->
-        <form id="contact-form" class="flex flex-col gap-4">
-          <!-- Campo Nombre -->
-          <div class="flex flex-col gap-1 text-left">
-            <label class="text-sm font-medium text-gray-300">Nombre completo</label>
-            <input type="text" placeholder="Ej: Juan Pérez" required
-                  class="bg-card_bg border border-white/10 rounded-lg px-4 py-2 focus:border-primary outline-none transition-all">
-          </div>
-
-          <!-- Campo Email -->
-          <div class="flex flex-col gap-1 text-left">
-            <label class="text-sm font-medium text-gray-300">Correo electrónico</label>
-            <input type="email" placeholder="tu@correo.com" required
-                  class="bg-card_bg border border-white/10 rounded-lg px-4 py-2 focus:border-primary outline-none transition-all">
-          </div>
-
-          <!-- Campo Mensaje -->
-          <div class="flex flex-col gap-1 text-left">
-            <label class="text-sm font-medium text-gray-300">Mensaje</label>
-            <textarea rows="4" placeholder="¿En qué podemos ayudarte?" required
-                      class="bg-card_bg border border-white/10 rounded-lg px-4 py-2 focus:border-primary outline-none transition-all resize-none"></textarea>
-          </div>
-
-          <!-- Botón de Envío -->
-          <button type="submit" class="btn-primary w-full py-3 rounded-full font-bold mt-4">
-            Enviar Mensaje
-          </button>
-        </form>
-
-        <button id="close" class="mt-4 text-gray-500 hover:text-white text-sm transition-colors">
-          Cerrar ventana
-        </button>
-      </div>
-    </div>
+    <el-dialog>
+      <contact-modal></contact-modal>
+    </el-dialog>
   </body>
 </html>
