@@ -14,14 +14,14 @@ class MainHeader extends HTMLElement {
                 <img src="../images/bit_value.png" alt="Logo BitValue" class="w-full h-full object-cover" />
               </div>
               <span class="font-display text-xl font-bold tracking-widest text-white uppercase">
-                <a href="home.html">Bit<span class="text-primary">Value</span></a>
+                <a href="index.html">Bit<span class="text-primary">Value</span></a>
               </span>
             </div>
 
             <div class="hidden md:flex items-center space-x-10">
-              <a class="text-sm font-medium text-gray-300 hover:text-primary transition-colors" href="home.html">Inicio</a>
+              <a class="text-sm font-medium text-gray-300 hover:text-primary transition-colors" href="index.html">Inicio</a>
               <a class="text-sm font-medium text-gray-300 hover:text-primary transition-colors" href="nosotros.html">Nosotros</a>
-              <a class="text-sm font-medium text-gray-300 hover:text-primary transition-colors" href="home.html#servicios">Servicios</a>
+              <a class="text-sm font-medium text-gray-300 hover:text-primary transition-colors" href="#servicios">Servicios</a>
               <a class="text-sm font-medium text-gray-300 hover:text-primary transition-colors" href="blog.html">Blog</a>
             </div>
 
@@ -42,7 +42,7 @@ class MainHeader extends HTMLElement {
         <!-- Menú Móvil -->
         <div id="mobile-menu" class="fixed inset-x-0 top-0 z-[60] bg-card_bg text-gray-200 shadow-2xl -translate-y-full transition-transform duration-500 ease-in-out md:hidden flex flex-col h-auto max-h-[90vh] overflow-y-auto border-b border-primary/20">
           <nav class="flex flex-col w-full divide-y divide-white/5">
-            <a class="flex items-center gap-4 px-6 py-5 hover:bg-white/5 transition-colors group border-t border-white/5" href="home.html">
+            <a class="flex items-center gap-4 px-6 py-5 hover:bg-white/5 transition-colors group border-t border-white/5" href="index.html">
               <span class="material-symbols-outlined text-gray-500 group-hover:text-primary transition-colors">home</span>
               <span class="text-sm font-bold tracking-wider uppercase">Inicio</span>
             </a>
@@ -50,7 +50,7 @@ class MainHeader extends HTMLElement {
               <span class="material-symbols-outlined text-gray-500 group-hover:text-primary transition-colors">groups</span>
               <span class="text-sm font-bold tracking-wider uppercase">Nosotros</span>
             </a>
-            <a class="flex items-center gap-4 px-6 py-5 hover:bg-white/5 transition-colors group" href="home.html#servicios">
+            <a class="flex items-center gap-4 px-6 py-5 hover:bg-white/5 transition-colors group" href="index.html#servicios">
               <span class="material-symbols-outlined text-gray-500 group-hover:text-primary transition-colors">grid_view</span>
               <span class="text-sm font-bold tracking-wider uppercase">Servicios</span>
             </a>

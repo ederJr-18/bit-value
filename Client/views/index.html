@@ -1,0 +1,283 @@
+<!doctype html>
+<html class="dark" lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>BitValue Coin</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300..900;1,300..900&family=Outfit:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../css/styles.css" />
+
+    <!-- COMPONENTS -->
+    <script src="../components/MainHeader.js" defer></script>
+    <script src="../components/MainFooter.js"></script>
+    <script src="../components/ContactModal.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1"
+      type="module"
+    ></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              // PALETA REFINADA (BÚHO)
+              bg_deep: "#050B14" /* Azul muy oscuro (Casi negro) */,
+              card_bg: "#0F1621" /* Fondo tarjetas */,
+              primary: "#00D4FF" /* CIAN (Acción Principal) */,
+              accent_purple: "#9D00FF" /* Morado (Detalles) */,
+              accent_yellow: "#FFC300" /* Amarillo (Solo iconos pequeños) */,
+            },
+            fontFamily: {
+              display: ["Crimson Pro", "serif"],
+              sans: ["Outfit", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style type="text/tailwindcss">
+      /* Navegación Glassmorphism */
+      .glass-nav {
+        background-color: rgba(5, 11, 20, 0.85); /* Coincide con bg_deep */
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      /* === BOTÓN PRINCIPAL (Cian Sólido) === */
+      .btn-primary {
+        background-color: #00d4ff; /* Color del logo */
+        color: #050b14; /* Texto oscuro para contraste perfecto */
+        border: none;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+        box-shadow: 0 0 20px rgba(0, 212, 255, 0.3); /* Resplandor suave fijo */
+      }
+
+      /* Hover: Solo movimiento, NO cambia color */
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+      }
+
+      /* === BOTÓN SECUNDARIO (Ghost) === */
+      .btn-ghost {
+        background-color: transparent;
+        color: #ffffff;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .btn-ghost:hover {
+        border-color: #ffffff;
+        background-color: rgba(255, 255, 255, 0.05);
+      }
+
+      /* Texto con Gradiente (Solo para títulos) */
+      .text-gradient-owl {
+        background: linear-gradient(90deg, #00d4ff 0%, #9d00ff 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-bg_deep font-sans text-gray-200 transition-colors duration-300"
+  >
+    <header>
+      <main-header></main-header>
+    </header>
+
+    <main class="pt-20" id="inicio">
+      <section class="py-24 px-4 bg-bg_deep relative overflow-hidden">
+        <div
+          class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(157,0,255,0.1)_0%,transparent_60%)]"
+        ></div>
+
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+          <h1
+            class="font-display text-5xl md:text-7xl mb-6 leading-tight text-white"
+          >
+            Transformando datos en <br />
+            <span class="text-gradient-owl"> Valor Real </span>
+          </h1>
+          <p class="text-lg text-gray-400 mb-10 max-w-2xl mx-auto">
+            Explora nuestro ecosistema diseñado para empoderarte en la nueva
+            economía digital, priorizando transparencia, seguridad y resultados.
+          </p>
+
+          <div class="flex justify-center gap-4 flex-wrap">
+            <button
+              class="btn-primary px-8 py-4 rounded-full font-sans text-lg font-bold"
+            >
+              Descubre más
+            </button>
+            <button
+              class="btn-ghost px-8 py-4 rounded-full font-sans text-lg font-medium"
+            >
+              Ver Precios
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-24 px-4 bg-bg_deep" id="servicios">
+        <div class="max-w-7xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-display text-white">
+              Nuestro <span class="text-primary">Ecosistema</span>
+            </h2>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div
+              class="bg-card_bg rounded-xl overflow-hidden border border-white/5 group hover:border-primary transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(0,212,255,0.15)]"
+            >
+              <div class="h-40 bg-[#0B0E14] flex items-center justify-center">
+                <span
+                  class="material-symbols-outlined text-5xl text-gray-600 group-hover:text-primary transition-colors"
+                  >minor_crash</span
+                >
+              </div>
+              <div class="p-6">
+                <h3
+                  class="font-display text-xl mb-2 text-white group-hover:text-primary transition-colors"
+                >
+                  Seguridad Vehicular
+                </h3>
+                <p class="text-sm text-gray-400">
+                  Escáner OBD II conectado a Blockchain en tiempo real.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="bg-card_bg rounded-xl overflow-hidden border border-white/5 group hover:border-accent_purple transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(157,0,255,0.15)]"
+            >
+              <div class="h-40 bg-[#0B0E14] flex items-center justify-center">
+                <span
+                  class="material-symbols-outlined text-5xl text-gray-600 group-hover:text-accent_purple transition-colors"
+                  >token</span
+                >
+              </div>
+              <div class="p-6">
+                <h3
+                  class="font-display text-xl mb-2 text-white group-hover:text-accent_purple transition-colors"
+                >
+                  Gestión de Datos
+                </h3>
+                <p class="text-sm text-gray-400">
+                  Tus datos encriptados te generan valor directo.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="bg-card_bg rounded-xl overflow-hidden border border-white/5 group hover:border-accent_yellow transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(255,195,0,0.15)]"
+            >
+              <div class="h-40 bg-[#0B0E14] flex items-center justify-center">
+                <span
+                  class="material-symbols-outlined text-5xl text-gray-600 group-hover:text-accent_yellow transition-colors"
+                  >currency_bitcoin</span
+                >
+              </div>
+              <div class="p-6">
+                <h3
+                  class="font-display text-xl mb-2 text-white group-hover:text-accent_yellow transition-colors"
+                >
+                  Activos Digitales
+                </h3>
+                <p class="text-sm text-gray-400">
+                  Consultoría experta para maximizar tu portafolio.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="bg-card_bg rounded-xl overflow-hidden border border-white/5 group hover:border-primary transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(0,212,255,0.15)]"
+            >
+              <div class="h-40 bg-[#0B0E14] flex items-center justify-center">
+                <span
+                  class="material-symbols-outlined text-5xl text-gray-600 group-hover:text-primary transition-colors"
+                  >agriculture</span
+                >
+              </div>
+              <div class="p-6">
+                <h3
+                  class="font-display text-xl mb-2 text-white group-hover:text-primary transition-colors"
+                >
+                  Agro e Industria
+                </h3>
+                <p class="text-sm text-gray-400">
+                  Soluciones IoT para sectores productivos.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-24 px-4 bg-bg_deep relative">
+        <div
+          class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16"
+        >
+          <div class="lg:w-1/2 relative">
+            <div
+              class="absolute inset-0 bg-gradient-to-tr from-accent_purple to-primary opacity-20 blur-[100px] rounded-full"
+            ></div>
+
+            <div
+              class="relative w-full aspect-square rounded-2xl overflow-hidden border border-white/10 bg-card_bg flex items-center justify-center"
+            >
+              <span class="material-symbols-outlined text-9xl text-gray-700"
+                >hub</span
+              >
+            </div>
+          </div>
+
+          <div class="lg:w-1/2">
+            <h2
+              class="font-display text-4xl md:text-5xl mb-6 text-white leading-tight"
+            >
+              Innovación tecnológica con
+              <span class="text-primary">blockchain descentralizado</span>
+            </h2>
+            <p class="text-lg text-gray-400 mb-8 leading-relaxed">
+              Descubra cómo BitValue Coin redefine el valor digital. No solo
+              ofrecemos servicios, creamos un puente donde la transparencia y el
+              control de tus datos trabajan a tu favor.
+            </p>
+            <button class="btn-primary px-8 py-3 rounded-full font-bold">
+              Saber más
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-bg_deep border-t border-white/10 py-12 px-4">
+      <main-footer></main-footer>
+    </footer>
+
+    <!-- MODAL DE CONTACTO -->
+    <el-dialog>
+      <contact-modal></contact-modal>
+    </el-dialog>
+  </body>
+</html>
